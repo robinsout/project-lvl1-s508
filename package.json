@@ -28,5 +28,7 @@
     "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "@babel/preset-env": "^7.4.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }

@@ -10,7 +10,7 @@ module.exports = {
   ],
   plugins: [
     [
-      '/node_modules/@babel/plugin-proposal-pipeline-operator',
+      '@babel/plugin-proposal-pipeline-operator',
       {
         proposal: 'minimal',
       },

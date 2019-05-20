@@ -4,7 +4,8 @@
   "description": "Hexlet Project #1 (20.05.2019 — 17.06.2019)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "./node_modules/.bin/babel src --out-dir dist"	
   },
   "bin": {
     "bgames": "src/bin/brain-games.js"
@@ -15,6 +16,7 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "@babel/preset-env": "^7.4.4"
   },
   "dependencies": {}

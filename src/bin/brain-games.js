@@ -1,4 +1,5 @@
 #!/usr/bin/env node
 
-import functionHello from '../index.js';
+import functionHello from '..';
+
 functionHello();

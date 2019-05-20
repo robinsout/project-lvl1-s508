@@ -1,4 +1,5 @@
 language: node_js
-install:
-  - npm install -g eslint eslint-config-airbnb-base eslint-plugin-import babel-eslint
-script: make lint
+node_js: 
+  - "10"
+script:
+  - make lint

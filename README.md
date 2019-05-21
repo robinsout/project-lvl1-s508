@@ -8,3 +8,9 @@ Travis build status:
 CodeClimate status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
+
+Installation:
+[![asciicast](https://asciinema.org/a/PxCE0VvWXuuXAxW1UhceJaXql.svg)](https://asciinema.org/a/PxCE0VvWXuuXAxW1UhceJaXql)
+
+Game tutorial:
+[![asciicast](https://asciinema.org/a/EsWLW3ITbVK7lTDP2DqoEk8bX.svg)](https://asciinema.org/a/EsWLW3ITbVK7lTDP2DqoEk8bX)

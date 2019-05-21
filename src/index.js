@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import readlineSync from 'readline-sync';
 
 export const functionHello = () => {
@@ -7,41 +8,46 @@ export const functionHello = () => {
   return userName;
 };
 
+const askQuestionAndGetAnswer = (question) => {
+  console.log('Question:', question);
+  return readlineSync.question('Your answer: ');
+};
+
+const checkAndShowResults = (userAnswer, correctAnswer, userName, iter) => {
+  if (userAnswer.toLowerCase() === correctAnswer) {
+    console.log('Correct!');
+  } else {
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+    console.log(`Let's try again, ${userName}!`);
+    return false;
+  }
+  if (iter === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+  return true;
+};
+
 const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min)) + min;
 
 const isEven = num => (num % 2 === 0);
 
-const askUserAndCheckEven = () => {
-  const randomNum = getRandomInteger(1, 100);
-  console.log('Question:', randomNum);
-  const userAnswer = readlineSync.question('Your answer: ');
-  let correctAnswer = '';
-  if (isEven(randomNum)) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-  return [userAnswer, correctAnswer];
-};
-
 export const checkEven = () => {
   const userName = functionHello();
   console.log('Answer "yes" if number even otherwise answer "no".');
-  let i = 0;
-  let ask;
+  let iter = 0;
   do {
-    ask = askUserAndCheckEven();
-    if (ask[0].toLowerCase() === ask[1]) {
-      console.log('Correct!');
+    iter += 1;
+    const randomNum = getRandomInteger(1, 100);
+    const userAnswer = askQuestionAndGetAnswer(randomNum);
+    let correctAnswer = '';
+    if (isEven(randomNum)) {
+      correctAnswer = 'yes';
     } else {
-      console.log(`'${ask[0]}' is wrong answer ;(. Correct answer was '${ask[1]}'`);
-      console.log(`Let's try again, ${userName}!`);
+      correctAnswer = 'no';
+    }
+    const result = checkAndShowResults(userAnswer, correctAnswer, userName, iter);
+    if (result === false) {
       break;
     }
-    i += 1;
-  }
-  while (i < 3 && ask[0] !== false);
-  if (i === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  } while (iter < 3);
 };

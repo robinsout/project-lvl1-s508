@@ -1,9 +1,10 @@
-import { functionHello, askQuestionAndGetAnswer, checkAndShowResults } from '..';
-import { getRandomInteger } from './even';
+import {
+  functionHello, askQuestionAndGetAnswer, checkAndShowResults, getRandomInteger,
+} from '..';
 
 const calcGame = () => {
   const userName = functionHello();
-  console.log('Answer "yes" if number even otherwise answer "no".');
+  console.log('What is the result of the expression?');
   let iter = 0;
   do {
     iter += 1;

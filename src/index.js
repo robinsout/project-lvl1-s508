@@ -25,3 +25,5 @@ export const checkAndShowResults = (userAnswer, correctAnswer, userName, iter) =
   }
   return true;
 };
+
+export const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min)) + min;

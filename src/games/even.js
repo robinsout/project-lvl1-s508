@@ -1,6 +1,6 @@
-import { functionHello, askQuestionAndGetAnswer, checkAndShowResults } from '..';
-
-export const getRandomInteger = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+import {
+  functionHello, askQuestionAndGetAnswer, checkAndShowResults, getRandomInteger,
+} from '..';
 
 const isEven = num => (num % 2 === 0);
 

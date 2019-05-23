@@ -14,7 +14,7 @@ CodeClimate status:
 
 Installation:
 
-[![asciicast](https://asciinema.org/a/ReKoYWv2L5T3ojbutBo6KteoC.svg)](https://asciinema.org/a/ReKoYWv2L5T3ojbutBo6KteoC)
+[![asciicast](https://asciinema.org/a/CIocmuRgWjA2NzAatE1vVTvN0.svg)](https://asciinema.org/a/CIocmuRgWjA2NzAatE1vVTvN0)
 
 Even game tutorial:
 
@@ -23,3 +23,7 @@ Even game tutorial:
 Calc game tutorial:
 
 [![asciicast](https://asciinema.org/a/iECfpdI0gvbBcbXwzr9K1fGRv.svg)](https://asciinema.org/a/iECfpdI0gvbBcbXwzr9K1fGRv)
+
+GCD game tutorial:
+
+[![asciicast](https://asciinema.org/a/DRxKUPGjLRcXNLIly4uL8ff6K.svg)](https://asciinema.org/a/DRxKUPGjLRcXNLIly4uL8ff6K)

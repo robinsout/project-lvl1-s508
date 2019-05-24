@@ -14,7 +14,7 @@ CodeClimate status:
 
 Installation:
 
-[![asciicast](https://asciinema.org/a/4I6uuPjKE1CsZB2PlZu7qZtmt.svg)](https://asciinema.org/a/4I6uuPjKE1CsZB2PlZu7qZtmt)
+[![asciicast](https://asciinema.org/a/3JDn3IchiuuOLdwUlEttyUmzY.svg)](https://asciinema.org/a/3JDn3IchiuuOLdwUlEttyUmzY)
 
 Even game tutorial:
 
@@ -26,8 +26,12 @@ Calc game tutorial:
 
 GCD game tutorial:
 
-[![asciicast](https://asciinema.org/a/DRxKUPGjLRcXNLIly4uL8ff6K.svg)](https://asciinema.org/a/DRxKUPGjLRcXNLIly4uL8ff6K)
+[![asciicast](https://asciinema.org/a/bdpfRZ02Ed4V2DjVkVGNIuPry.svg)](https://asciinema.org/a/bdpfRZ02Ed4V2DjVkVGNIuPry)
 
 Progression game tutorial:
 
 [![asciicast](https://asciinema.org/a/iaDNEGRxHfaiL9g3hUdv2gtBY.svg)](https://asciinema.org/a/iaDNEGRxHfaiL9g3hUdv2gtBY)
+
+Prime game tutorial:
+
+[![asciicast](https://asciinema.org/a/haoCjmr2UNtgFNyXwAswVqLYH.svg)](https://asciinema.org/a/haoCjmr2UNtgFNyXwAswVqLYH)

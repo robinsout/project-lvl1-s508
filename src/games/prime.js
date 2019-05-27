@@ -1,10 +1,10 @@
 import {
-  functionHello, askQuestionAndGetAnswer, checkAndShowResults, getRandomInteger,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
 } from '..';
 
 const isPrime = (num) => {
   let counter = 0;
-  for (let i = 1; i <= num; i += 1) {
+  for (let i = 1; i <= num / 2; i += 1) {
     if (num % i === 0) {
       counter += 1;
     }
@@ -16,12 +16,13 @@ const isPrime = (num) => {
 };
 
 const checkPrimeGame = () => {
-  const userName = functionHello();
+  const userName = getUserName();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   let iter = 0;
+  const numberOfQuestions = 3;
   do {
     iter += 1;
-    const randomNum = getRandomInteger(1, 50);
+    const randomNum = generateNumber(1, 50);
     const userAnswer = askQuestionAndGetAnswer(randomNum);
     let correctAnswer = '';
     if (isPrime(randomNum)) {
@@ -33,7 +34,7 @@ const checkPrimeGame = () => {
     if (result === false) {
       break;
     }
-  } while (iter < 3);
+  } while (iter < numberOfQuestions);
 };
 
 export default checkPrimeGame;

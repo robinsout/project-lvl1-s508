@@ -1,5 +1,5 @@
 import {
-  functionHello, askQuestionAndGetAnswer, checkAndShowResults, getRandomInteger,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
 } from '..';
 
 const getGCD = (randomNum1, randomNum2) => {
@@ -14,13 +14,14 @@ const getGCD = (randomNum1, randomNum2) => {
 };
 
 const gcdGame = () => {
-  const userName = functionHello();
+  const userName = getUserName();
   console.log('Find the greatest common divisor of given numbers.');
   let iter = 0;
+  const numberOfQuestions = 3;
   do {
     iter += 1;
-    const randomNum1 = getRandomInteger(1, 30);
-    const randomNum2 = getRandomInteger(1, 30);
+    const randomNum1 = generateNumber(1, 30);
+    const randomNum2 = generateNumber(1, 30);
     const questionExpression = `${randomNum1} ${randomNum2}`;
     const userAnswer = askQuestionAndGetAnswer(questionExpression);
     const correctAnswer = getGCD(randomNum1, randomNum2).toString();
@@ -28,7 +29,7 @@ const gcdGame = () => {
     if (result === false) {
       break;
     }
-  } while (iter < 3);
+  } while (iter < numberOfQuestions);
 };
 
 export default gcdGame;

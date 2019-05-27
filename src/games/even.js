@@ -1,28 +1,24 @@
 import {
-  functionHello, askQuestionAndGetAnswer, checkAndShowResults, getRandomInteger,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
 } from '..';
 
 const isEven = num => (num % 2 === 0);
 
 const checkEvenGame = () => {
-  const userName = functionHello();
+  const userName = getUserName();
   console.log('Answer "yes" if number even otherwise answer "no".');
   let iter = 0;
+  const numberOfQuestions = 3;
   do {
     iter += 1;
-    const randomNum = getRandomInteger(1, 100);
+    const randomNum = generateNumber(1, 100);
     const userAnswer = askQuestionAndGetAnswer(randomNum);
-    let correctAnswer = '';
-    if (isEven(randomNum)) {
-      correctAnswer = 'yes';
-    } else {
-      correctAnswer = 'no';
-    }
+    const correctAnswer = isEven(randomNum) ? ('yes') : ('no');
     const result = checkAndShowResults(userAnswer.toLowerCase(), correctAnswer, userName, iter);
     if (result === false) {
       break;
     }
-  } while (iter < 3);
+  } while (iter < numberOfQuestions);
 };
 
 export default checkEvenGame;

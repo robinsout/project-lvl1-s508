@@ -7,7 +7,6 @@
     "study",
     "javascript"
   ],
-  "main": "index.js",
   "files": [
     "dist"
   ],

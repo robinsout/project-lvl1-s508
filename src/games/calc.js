@@ -1,6 +1,18 @@
 import {
-  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults,
 } from '..';
+import generateNumber from '../utils';
+
+const operators = [{
+  sign: '+',
+  method: (a, b) => (a + b),
+}, {
+  sign: '-',
+  method: (a, b) => a - b,
+}, {
+  sign: '*',
+  method: (a, b) => a * b,
+}];
 
 const calcGame = () => {
   const userName = getUserName();
@@ -9,16 +21,6 @@ const calcGame = () => {
   const numberOfQuestions = 3;
   do {
     iter += 1;
-    const operators = [{
-      sign: '+',
-      method: (a, b) => (a + b),
-    }, {
-      sign: '-',
-      method: (a, b) => a - b,
-    }, {
-      sign: '*',
-      method: (a, b) => a * b,
-    }];
     const selectedOperator = Math.floor(Math.random() * operators.length);
     const randomNum1 = generateNumber(1, 30);
     const randomNum2 = generateNumber(1, 30);

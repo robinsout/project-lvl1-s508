@@ -1,6 +1,7 @@
 import {
-  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults,
 } from '..';
+import generateNumber from '../utils';
 
 const getGCD = (randomNum1, randomNum2) => {
   let x = Math.abs(randomNum1);

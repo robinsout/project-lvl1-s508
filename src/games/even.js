@@ -1,6 +1,7 @@
 import {
-  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults,
 } from '..';
+import generateNumber from '../utils';
 
 const isEven = num => (num % 2 === 0);
 

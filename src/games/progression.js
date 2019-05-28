@@ -1,6 +1,7 @@
 import {
-  getUserName, askQuestionAndGetAnswer, checkAndShowResults, generateNumber,
+  getUserName, askQuestionAndGetAnswer, checkAndShowResults,
 } from '..';
+import generateNumber from '../utils';
 
 const progressionGame = () => {
   const userName = getUserName();

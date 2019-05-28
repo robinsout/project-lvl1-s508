@@ -13,18 +13,17 @@ export const askQuestionAndGetAnswer = (question) => {
 };
 
 export const checkAndShowResults = (userAnswer, correctAnswer, userName, iter) => {
+  let correctAnswerIndex = true;
   if (userAnswer === correctAnswer) {
     console.log('Correct!');
   } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
     console.log(`Let's try again, ${userName}!`);
-    return false;
+    correctAnswerIndex = false;
   }
   const numberOfQuestions = 3;
-  if (iter === numberOfQuestions) {
+  if (iter === numberOfQuestions && correctAnswerIndex !== false) {
     console.log(`Congratulations, ${userName}!`);
   }
-  return true;
+  return correctAnswerIndex;
 };
-
-export const generateNumber = (min, max) => Math.floor(Math.random() * (max - min)) + min;

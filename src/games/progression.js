@@ -1,13 +1,11 @@
-import {
-  getUserName, askQuestionAndGetAnswer, checkAndShowResults,
-} from '..';
-import generateNumber from '../utils';
+import checkAndShowResults from '..';
+import { generateNumber } from '../utils';
+
+const gameRules = 'What number is missing in the progression?';
+const numberOfQuestions = 3;
 
 const progressionGame = () => {
-  const userName = getUserName();
-  console.log('What number is missing in the progression?');
   let iter = 0;
-  const numberOfQuestions = 3;
   do {
     iter += 1;
     const progressionStep = generateNumber(-20, 20);
@@ -38,11 +36,8 @@ const progressionGame = () => {
       }
     }
 
-    const userAnswer = askQuestionAndGetAnswer(question);
-
     const correctAnswer = hiddenElement.toString();
-
-    const result = checkAndShowResults(userAnswer, correctAnswer, userName, iter);
+    const result = checkAndShowResults(gameRules, question, correctAnswer, iter);
     if (result === false) {
       break;
     }

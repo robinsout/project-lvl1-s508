@@ -1,4 +1,3 @@
-import checkAndShowResults from '..';
 import generateNumber from '../utils';
 
 const getGcd = (randomNum1, randomNum2) => {
@@ -13,21 +12,13 @@ const getGcd = (randomNum1, randomNum2) => {
 };
 
 const gameRules = 'Find the greatest common divisor of given numbers.';
-const numberOfQuestions = 3;
 
 const gcdGame = () => {
-  let iter = 0;
-  do {
-    iter += 1;
-    const randomNum1 = generateNumber(1, 30);
-    const randomNum2 = generateNumber(1, 30);
-    const question = `${randomNum1} ${randomNum2}`;
-    const correctAnswer = getGcd(randomNum1, randomNum2).toString();
-    const result = checkAndShowResults(gameRules, question, correctAnswer, iter);
-    if (result === false) {
-      break;
-    }
-  } while (iter < numberOfQuestions);
+  const randomNum1 = generateNumber(1, 30);
+  const randomNum2 = generateNumber(1, 30);
+  const question = `${randomNum1} ${randomNum2}`;
+  const correctAnswer = getGcd(randomNum1, randomNum2).toString();
+  return [gameRules, question, correctAnswer];
 };
 
 export default gcdGame;

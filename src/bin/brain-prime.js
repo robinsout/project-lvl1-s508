@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import checkPrimeGame from '../games/prime';
+import checkAndShowResults from '..';
 
-checkPrimeGame();
+checkAndShowResults('prime');

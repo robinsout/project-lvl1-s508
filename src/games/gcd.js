@@ -1,7 +1,7 @@
 import checkAndShowResults from '..';
-import { generateNumber } from '../utils';
+import generateNumber from '../utils';
 
-const getGCD = (randomNum1, randomNum2) => {
+const getGcd = (randomNum1, randomNum2) => {
   let x = Math.abs(randomNum1);
   let y = Math.abs(randomNum2);
   while (y) {
@@ -22,7 +22,7 @@ const gcdGame = () => {
     const randomNum1 = generateNumber(1, 30);
     const randomNum2 = generateNumber(1, 30);
     const question = `${randomNum1} ${randomNum2}`;
-    const correctAnswer = getGCD(randomNum1, randomNum2).toString();
+    const correctAnswer = getGcd(randomNum1, randomNum2).toString();
     const result = checkAndShowResults(gameRules, question, correctAnswer, iter);
     if (result === false) {
       break;

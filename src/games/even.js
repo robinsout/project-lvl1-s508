@@ -1,8 +1,10 @@
 import checkAndShowResults from '..';
-import { generateNumber, isEven } from '../utils';
+import generateNumber from '../utils';
 
 const gameRules = 'Answer "yes" if number even otherwise answer "no".';
 const numberOfQuestions = 3;
+
+export const isEven = num => (num % 2 === 0);
 
 const checkEvenGame = () => {
   let iter = 0;

@@ -1,5 +1,5 @@
 import checkAndShowResults from '..';
-import { generateNumber } from '../utils';
+import generateNumber from '../utils';
 
 const gameRules = 'What number is missing in the progression?';
 const numberOfQuestions = 3;
@@ -8,18 +8,18 @@ const progressionGame = () => {
   let iter = 0;
   do {
     iter += 1;
-    const progressionStep = generateNumber(-20, 20);
-    const numberOfElements = 10;
-    const firstElement = generateNumber(-20, 20);
+    const d = generateNumber(-20, 20);
+    const n = 10;
+    const a1 = generateNumber(-20, 20);
     const progressions = [{
-      progression: a => a + progressionStep,
+      progression: a => a + d,
     }];
 
     const selectedProgression = Math.floor(Math.random() * progressions.length);
-    const randomArray = [firstElement];
+    const randomArray = [a1];
 
-    for (let j = 1; j < numberOfElements; j += 1) {
-      const newElement = progressions[selectedProgression].progression(randomArray[j - 1]);
+    for (let j = 0; j < (n - 1); j += 1) {
+      const newElement = progressions[selectedProgression].progression(randomArray[j]);
       randomArray.push(newElement);
     }
 

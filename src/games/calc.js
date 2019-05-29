@@ -1,5 +1,5 @@
 import checkAndShowResults from '..';
-import { generateNumber } from '../utils';
+import generateNumber from '../utils';
 
 const operators = [{
   sign: '+',

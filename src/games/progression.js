@@ -1,39 +1,35 @@
 import generateNumber from '../utils';
 
-const gameRules = 'What number is missing in the progression?';
+const gameDescription = 'What number is missing in the progression?';
 
 const progressionGame = () => {
-  const d = generateNumber(-20, 20);
-  const n = 10;
-  const a1 = generateNumber(-20, 20);
-  const progressions = [{
-    progression: a => a + d,
-  }];
+  const difference = generateNumber(-20, 20);
+  const numberOfTerms = 10;
+  const initialTerm = generateNumber(-20, 20);
+  const progressionGenerator = a => a + difference;
+  const generatedProgression = [initialTerm];
 
-  const selectedProgression = Math.floor(Math.random() * progressions.length);
-  const randomArray = [a1];
-
-  for (let j = 0; j < (n - 1); j += 1) {
-    const newElement = progressions[selectedProgression].progression(randomArray[j]);
-    randomArray.push(newElement);
+  for (let j = 0; j < (numberOfTerms - 1); j += 1) {
+    const newElement = progressionGenerator(generatedProgression[j]);
+    generatedProgression.push(newElement);
   }
 
-  const hiddenElementIndex = generateNumber(0, randomArray.length - 1);
-  const hiddenElement = randomArray[hiddenElementIndex];
-  randomArray[hiddenElementIndex] = '..';
+  const hiddenElementIndex = generateNumber(0, generatedProgression.length - 1);
+  const hiddenElement = generatedProgression[hiddenElementIndex];
+  generatedProgression[hiddenElementIndex] = '..';
 
   let question = '';
-  for (let j = 0; j < randomArray.length; j += 1) {
+  for (let j = 0; j < generatedProgression.length; j += 1) {
     if (question !== '') {
-      question = `${question} ${randomArray[j]}`;
+      question = `${question} ${generatedProgression[j]}`;
     } else {
-      question = randomArray[j];
+      question = generatedProgression[j];
     }
   }
 
   const correctAnswer = hiddenElement.toString();
 
-  return [gameRules, question, correctAnswer];
+  return [gameDescription, question, correctAnswer];
 };
 
 export default progressionGame;

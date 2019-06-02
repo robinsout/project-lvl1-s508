@@ -13,7 +13,7 @@ CodeClimate status:
 
 Installation:
 
-[![asciicast](https://asciinema.org/a/3JDn3IchiuuOLdwUlEttyUmzY.svg)](https://asciinema.org/a/3JDn3IchiuuOLdwUlEttyUmzY)
+[![asciicast](https://asciinema.org/a/L6CU6rHbctyR7NvFVqroDVGoA.svg)](https://asciinema.org/a/L6CU6rHbctyR7NvFVqroDVGoA)
 
 Even game tutorial:
 

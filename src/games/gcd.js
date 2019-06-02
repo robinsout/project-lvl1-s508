@@ -1,8 +1,8 @@
 import generateNumber from '../utils';
 
 const getGcd = (randomNum1, randomNum2) => {
-  let x = Math.abs(randomNum1);
-  let y = Math.abs(randomNum2);
+  let x = randomNum1;
+  let y = randomNum2;
   while (y) {
     const t = y;
     y = x % y;
@@ -11,14 +11,14 @@ const getGcd = (randomNum1, randomNum2) => {
   return x;
 };
 
-const gameRules = 'Find the greatest common divisor of given numbers.';
+const gameDescription = 'Find the greatest common divisor of given numbers.';
 
 const gcdGame = () => {
   const randomNum1 = generateNumber(1, 30);
   const randomNum2 = generateNumber(1, 30);
   const question = `${randomNum1} ${randomNum2}`;
   const correctAnswer = getGcd(randomNum1, randomNum2).toString();
-  return [gameRules, question, correctAnswer];
+  return [gameDescription, question, correctAnswer];
 };
 
 export default gcdGame;

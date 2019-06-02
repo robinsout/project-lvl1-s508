@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import checkAndShowResults from '..';
+import gameProcess from '..';
 
-checkAndShowResults('gcd');
+gameProcess('gcd');

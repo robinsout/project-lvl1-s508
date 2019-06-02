@@ -13,7 +13,7 @@ const progressionGame = (gameStarted = false) => {
     const initialTerm = generateNumber(-20, 20);
     const progressionGenerator = a => a + difference;
     const generatedProgression = [initialTerm];
-    for (let j = 0; j < (numberOfTerms - 1); j += 1) {
+    for (let j = 0; j < (numberOfTerms - 1); j += 1) { // Filling progression array
       const newElement = progressionGenerator(generatedProgression[j]);
       generatedProgression.push(newElement);
     }
@@ -21,7 +21,7 @@ const progressionGame = (gameStarted = false) => {
     const hiddenElement = generatedProgression[hiddenElementIndex];
     generatedProgression[hiddenElementIndex] = '..';
     let question = '';
-    for (let j = 0; j < generatedProgression.length; j += 1) {
+    for (let j = 0; j < generatedProgression.length; j += 1) { // Preparing progression to display
       if (question !== '') {
         question = `${question} ${generatedProgression[j]}`;
       } else {
@@ -29,7 +29,7 @@ const progressionGame = (gameStarted = false) => {
       }
     }
     const correctAnswer = hiddenElement.toString();
-    result = [gameDescription, question, correctAnswer];
+    result = [gameDescription, question, correctAnswer]; // Passing data to engine
   }
   return result;
 };

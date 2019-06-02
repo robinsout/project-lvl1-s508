@@ -1,4 +1,5 @@
 import generateNumber from '../utils';
+import gameProcess from '..';
 
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -15,10 +16,16 @@ const isPrime = (num) => {
   return false;
 };
 
-const primeGame = () => {
-  const question = generateNumber(1, 50);
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return [gameDescription, question, correctAnswer];
+const primeGame = (gameStarted = false) => {
+  let result;
+  if (gameStarted === false) { // Game not started yet, passing game function to the engine
+    result = gameProcess(primeGame);
+  } else if (gameStarted === true) { // Game already started, passing game data to the engine
+    const question = generateNumber(1, 50);
+    const correctAnswer = isPrime(question) ? 'yes' : 'no';
+    result = [gameDescription, question, correctAnswer];
+  }
+  return result;
 };
 
 export default primeGame;

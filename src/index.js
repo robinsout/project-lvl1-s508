@@ -12,13 +12,12 @@ const gameProcess = (inputGame) => {
     const inputGameData = inputGame(true);
     console.log('Question:', inputGameData[1]);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer.toLowerCase() === inputGameData[2]) {
-      console.log('Correct!');
-    } else {
+    if (userAnswer.toLowerCase() !== inputGameData[2]) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${inputGameData[2]}'`);
       console.log(`Let's try again, ${userName}!`);
       break;
     }
+    console.log('Correct!');
     if (iter === numberOfQuestions) {
       console.log(`Congratulations, ${userName}!`);
     }

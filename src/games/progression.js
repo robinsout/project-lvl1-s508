@@ -24,11 +24,7 @@ const progressionGame = () => playGame(gameDescription, () => {
 
   let question = '';
   for (let j = 0; j < progression.length; j += 1) { // Preparing progression to display
-    if (question !== '') {
-      question = `${question} ${progression[j]}`;
-    } else {
-      question = progression[j];
-    }
+    question = question !== '' ? `${question} ${progression[j]}` : progression[j];
   }
 
   const correctAnswer = hiddenElement.toString();

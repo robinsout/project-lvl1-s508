@@ -1,45 +1,38 @@
 import generateNumber from '../utils';
-import gameProcess from '..';
+import playGame from '..';
 
 const gameDescription = 'What number is missing in the progression?';
 
 const generateProgression = () => {
-  const difference = generateNumber(-20, 20);
-  const numberOfTerms = 10;
-  const initialTerm = generateNumber(-20, 20);
+  const difference = generateNumber(0, 20);
+  const lengthOfProgression = 10;
+  const initialTerm = generateNumber(0, 20);
   const progressionGenerator = a => a + difference;
-  const generatedProgression = [initialTerm];
-  for (let j = 0; j < (numberOfTerms - 1); j += 1) { // Filling progression array
-    const newElement = progressionGenerator(generatedProgression[j]);
-    generatedProgression.push(newElement);
+  const progression = [initialTerm];
+  for (let j = 0; j < (lengthOfProgression - 1); j += 1) { // Filling progression array
+    const newElement = progressionGenerator(progression[j]);
+    progression.push(newElement);
   }
-  return generatedProgression;
+  return progression;
 };
 
-const progressionGame = (gameStarted = false) => {
-  // If game not started yet, passing game function to the engine
-  // If no, game already started, passing game data to the engine
-  if (gameStarted === false) {
-    return gameProcess(progressionGame);
-  }
-
-  const generatedProgression = generateProgression();
-  const hiddenElementIndex = generateNumber(0, generatedProgression.length - 1);
-  const hiddenElement = generatedProgression[hiddenElementIndex];
-  generatedProgression[hiddenElementIndex] = '..';
+const progressionGame = () => playGame(gameDescription, () => {
+  const progression = generateProgression();
+  const hiddenElementIndex = generateNumber(0, progression.length - 1);
+  const hiddenElement = progression[hiddenElementIndex];
+  progression[hiddenElementIndex] = '..';
 
   let question = '';
-  for (let j = 0; j < generatedProgression.length; j += 1) { // Preparing progression to display
+  for (let j = 0; j < progression.length; j += 1) { // Preparing progression to display
     if (question !== '') {
-      question = `${question} ${generatedProgression[j]}`;
+      question = `${question} ${progression[j]}`;
     } else {
-      question = generatedProgression[j];
+      question = progression[j];
     }
   }
 
   const correctAnswer = hiddenElement.toString();
-
-  return [gameDescription, question, correctAnswer]; // Passing data to engine
-};
+  return [question, correctAnswer]; // Passing data to engine
+});
 
 export default progressionGame;

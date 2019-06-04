@@ -1,5 +1,5 @@
 import generateNumber from '../utils';
-import gameProcess from '..';
+import playGame from '..';
 
 const operations = [{
   sign: '+',
@@ -14,18 +14,13 @@ const operations = [{
 
 const gameDescription = 'What is the result of the expression?';
 
-const calcGame = (gameStarted = false) => {
-  // If game not started yet, passing game function to the engine
-  // If no, game already started, passing game data to the engine
-  if (gameStarted === false) {
-    return gameProcess(calcGame);
-  }
-  const selectedOperator = generateNumber(1, operations.length);
+const calcGame = () => playGame(gameDescription, () => {
+  const operator = generateNumber(0, operations.length - 1);
   const randomNum1 = generateNumber(1, 30);
   const randomNum2 = generateNumber(1, 30);
-  const question = `${randomNum1} ${operations[selectedOperator].sign} ${randomNum2}`;
-  const correctAnswer = operations[selectedOperator].method(randomNum1, randomNum2).toString();
-  return [gameDescription, question, correctAnswer];
-};
+  const question = `${randomNum1} ${operations[operator].sign} ${randomNum2}`;
+  const correctAnswer = operations[operator].method(randomNum1, randomNum2).toString();
+  return [question, correctAnswer];
+});
 
 export default calcGame;

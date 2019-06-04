@@ -1,19 +1,14 @@
 import generateNumber from '../utils';
-import gameProcess from '..';
+import playGame from '..';
 
 const gameDescription = 'Answer "yes" if number even otherwise answer "no".';
 
-const evenGame = (gameStarted = false) => {
-  const isEven = num => (num % 2 === 0);
+const isEven = num => (num % 2 === 0);
 
-  // If game not started yet, passing game function to the engine
-  // If no, game already started, passing game data to the engine
-  if (gameStarted === false) {
-    return gameProcess(evenGame);
-  }
+const evenGame = () => playGame(gameDescription, () => {
   const question = generateNumber(1, 100);
   const correctAnswer = isEven(question) ? ('yes') : ('no');
-  return [gameDescription, question, correctAnswer];
-};
+  return [question, correctAnswer];
+});
 
 export default evenGame;

@@ -9,7 +9,6 @@ Travis build status:
 
 CodeClimate status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/7abc54ff4bc4ee23b50f/maintainability)](https://codeclimate.com/github/robinsout/project-lvl1-s508/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/7abc54ff4bc4ee23b50f/test_coverage)](https://codeclimate.com/github/robinsout/project-lvl1-s508/test_coverage)
 
 Installation:
 

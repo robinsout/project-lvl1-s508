@@ -14,13 +14,13 @@ const operations = [{
 
 const gameDescription = 'What is the result of the expression?';
 
-const calcGame = () => playGame(gameDescription, () => {
+const calcGame = () => {
   const operator = generateNumber(0, operations.length - 1);
   const randomNum1 = generateNumber(1, 30);
   const randomNum2 = generateNumber(1, 30);
   const question = `${randomNum1} ${operations[operator].sign} ${randomNum2}`;
   const correctAnswer = operations[operator].method(randomNum1, randomNum2).toString();
   return [question, correctAnswer];
-});
+};
 
-export default calcGame;
+export default () => playGame(gameDescription, () => calcGame());

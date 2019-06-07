@@ -14,7 +14,7 @@ const isPrime = (num) => {
 };
 
 const primeGame = () => {
-  const question = generateNumber(1, 5);
+  const question = generateNumber(1, 50);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };

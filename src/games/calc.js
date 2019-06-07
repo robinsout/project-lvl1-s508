@@ -23,4 +23,4 @@ const calcGame = () => {
   return [question, correctAnswer];
 };
 
-export default () => playGame(gameDescription, () => calcGame());
+export default () => playGame(gameDescription, calcGame);

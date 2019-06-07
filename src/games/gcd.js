@@ -13,4 +13,4 @@ const gcdGame = () => {
   return [question, correctAnswer];
 };
 
-export default () => playGame(gameDescription, () => gcdGame());
+export default () => playGame(gameDescription, gcdGame);

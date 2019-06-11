@@ -14,7 +14,7 @@ const operations = [{
 
 const gameDescription = 'What is the result of the expression?';
 
-const calcGame = () => {
+const playCalcGame = () => {
   const operator = generateNumber(0, operations.length - 1);
   const randomNum1 = generateNumber(1, 30);
   const randomNum2 = generateNumber(1, 30);
@@ -23,4 +23,4 @@ const calcGame = () => {
   return [question, correctAnswer];
 };
 
-export default () => playGame(gameDescription, calcGame);
+export default () => playGame(gameDescription, playCalcGame);

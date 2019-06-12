@@ -4,19 +4,19 @@ import playGame from '..';
 const gameDescription = 'What number is missing in the progression?';
 const lengthOfProgression = 10;
 
-const generateProgression = (initialTerm, difference) => {
+const generateProgression = (initialTerm, difference, length) => {
   const progression = [];
-  for (let i = 0; i < lengthOfProgression; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     const newElement = initialTerm + difference * i;
     progression.push(newElement);
   }
   return progression;
 };
 
-const playProgressionGame = () => {
+const getProgressionGameData = () => {
   const difference = generateNumber(0, 20);
   const initialTerm = generateNumber(0, 20);
-  const progression = generateProgression(initialTerm, difference);
+  const progression = generateProgression(initialTerm, difference, lengthOfProgression);
   const hiddenElementIndex = generateNumber(0, progression.length - 1);
   const correctAnswer = progression[hiddenElementIndex].toString();
   progression[hiddenElementIndex] = '..';
@@ -24,4 +24,4 @@ const playProgressionGame = () => {
   return [question, correctAnswer];
 };
 
-export default () => playGame(gameDescription, playProgressionGame);
+export default () => playGame(gameDescription, getProgressionGameData);
